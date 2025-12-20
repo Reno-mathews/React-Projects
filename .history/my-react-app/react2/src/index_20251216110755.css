@@ -1,0 +1,5 @@
+.card{
+    border: 1px solid hs1(0, 0%, 80%);
+    border-radius: 10px;
+    box-shadow: 5px 5px rgba(7, 7, 7, 0.753);
+}
