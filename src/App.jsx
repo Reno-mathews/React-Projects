@@ -28,10 +28,19 @@ function App() {
 
       <ul>
         {tasks.map((t, index)=> (
-          <li key={index}>{t}</li>
+          <li key={index}>
+            {t}
+            <button onClick={() => {
+            setTasks(tasks.filter((_, i) => i !== index));
+          }}>
+            ❌
+          </button>
+        </li>
         ))}
       </ul>
     </div>
+
+
   );
 }
 export default App;
