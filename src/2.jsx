@@ -23,6 +23,24 @@ function App() {
             />
 
             <button onClick={addTask}>Add</button>
-        </div>
+
+            <ul>
+                {tasks.map(task, index)=> (
+                    <li key={index}>
+                        {t}
+                        <button onClick={() => {
+                            setTasks(tasks.filter((_, i) => i !== index))
+
+                        }}>
+            ❌
+          </button>
+        </li>
+        ))}
+      </ul>
+    </div>
+
     );
+
 }
+
+export default App;
