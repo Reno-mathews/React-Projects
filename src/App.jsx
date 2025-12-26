@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function App(){
     const [note, setNote] = useState("");
-    const [notes, setNotes] = useSate([]);
+    const [notes, setNotes] = useState([]);
     function addNote() {
 
         if(note.trim() === "") return;
