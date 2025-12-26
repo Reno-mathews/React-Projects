@@ -27,7 +27,14 @@ function App(){
 
             <ul>
                 {notes.map((n, index) => (
-                    <li key={index}>{n}</li>
+                    < li key={index}>
+                        {n}
+                        <button onClick={() => {
+                            setNotes(notes.filter((_, i) => i !== index));
+                        }}>
+                            ❌
+                        </button>
+                    </li>
                 ))}
             </ul>
         </div>
