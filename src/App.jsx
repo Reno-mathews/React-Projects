@@ -1,23 +1,20 @@
 import { useState } from "react";
 
-function App() {
-    const [step, setStep] = useState(1);
-    const[count, setCount] = useState(0);
+function App(){
+    const [note, setNote] = useState("");
+    const [notes, setNotes] = useSate([]);
 
     return (
         <div>
-            <h1>Counter App</h1>
-            <h2>{count}</h2>
+            <h1>Notes App</h1>
 
-            <input
-             type="number"
-             value={step}
-             onChange={(e) => setStep(Number(e.target.value))}
-             />
+            <textarea
+                value={note}
+                onChange={(e) => setNote(e.target.value)}
+                placeholder="Write a note..."
+            />
 
-            <button onClick= {() => setCount(count + step)}>+</button>
-            <button onClick= {() => setCount(count - step)}>-</button>
-            <button onClick={() => setCount(0)}>Reset</button>
+            <button>Add Note</button>
         </div>
     );
 }

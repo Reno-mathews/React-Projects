@@ -1,0 +1,25 @@
+import { useState } from "react";
+
+function App() {
+    const [step, setStep] = useState(1);
+    const[count, setCount] = useState(0);
+
+    return (
+        <div>
+            <h1>Counter App</h1>
+            <h2>{count}</h2>
+
+            <input
+             type="number"
+             value={step}
+             onChange={(e) => setStep(Number(e.target.value))}
+             />
+
+            <button onClick= {() => setCount(count + step)}>+</button>
+            <button onClick= {() => setCount(count - step)}>-</button>
+            <button onClick={() => setCount(0)}>Reset</button>
+        </div>
+    );
+}
+
+export default App;
