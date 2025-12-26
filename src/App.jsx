@@ -8,10 +8,15 @@ function App() {
         <div>
             <h1>Counter App</h1>
             <h2>{count}</h2>
+
             <input
              type="number"
-            <button onClick= {() => setCount(count + 1)}>+</button>
-            <button onClick= {() => setCount(count - 1)}>-</button>
+             value={step}
+             onChange={(e) => setStep(Number(e.target.value))}
+             />
+
+            <button onClick= {() => setCount(count + step)}>+</button>
+            <button onClick= {() => setCount(count - step)}>-</button>
             <button onClick={() => setCount(0)}>Reset</button>
         </div>
     );
