@@ -3,6 +3,15 @@ import { useState } from "react";
 function App(){
     const [note, setNote] = useState("");
     const [notes, setNotes] = useSate([]);
+    function addNote() {
+
+        if(note.trim() === "") return;
+
+        setNotes([...notes,note]);
+        setNote("");
+
+    }
+
 
     return (
         <div>
@@ -14,7 +23,13 @@ function App(){
                 placeholder="Write a note..."
             />
 
-            <button>Add Note</button>
+            <button onClick={addNote}>Add Note</button>
+
+            <ul>
+                {notes.map((n, index) => (
+                    <li key={index}>{n}</li>
+                ))}
+            </ul>
         </div>
     );
 }
