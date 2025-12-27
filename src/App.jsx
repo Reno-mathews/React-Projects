@@ -18,10 +18,24 @@ function App() {
             <input
             type="text"
             value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search books..."
             />
+
+            <ul>
+                {books
+                    .filter((book) =>
+                        book.toLowerCase().includes(query.toLowerCase())
+                    )
+                    .map((book, index) => (
+                        <li key={index}>{book}</li>
+                ))}
+            </ul>
         </div>
-    )
+    );
 }
+
+export default App;
 
 
 
